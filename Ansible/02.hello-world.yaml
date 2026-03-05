@@ -1,0 +1,24 @@
+- name: hello world
+  hosts: local
+  connection: local # no need of username and password
+  tasks:
+  - name: print hello world
+    ansible.builtin.debug:
+      msg: "Hello World"
+
+- name: Hello World
+  #hosts: web
+  hosts: local
+  connection: local
+  tasks:
+  - name: print hello World
+    ansible.builtin.debug:
+      msg: "Hello World!"
+
+- name: PLAY-2
+  hosts: local
+  connection: local
+  tasks:
+  - name: play-2 and task-1
+    ansible.builtin.debug:
+      msg: "Hello from PLAY-2 and TASK-1"
