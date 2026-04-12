@@ -6,9 +6,9 @@ variable "instance_names" {
 variable "instance_map" {
   type = map(string)
   default = {
-    mongodb  = "t2.small"
-    redis    = "t3.small"
-    nodejs   = "t3.medium"
+    mongodb  = "t3.small"
+    redis    = "t3.micro"
+    nodejs   = "t3.small"
     frontend = "t3.micro"
   }
 }
