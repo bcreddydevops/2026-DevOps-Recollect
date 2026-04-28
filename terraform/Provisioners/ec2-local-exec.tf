@@ -9,7 +9,7 @@ resource "aws_instance" "local_demo" {
   }
 
   provisioner "local-exec" {
-    command = "echo ${self.public_ip} > inventory.ini"
+    command = "echo ${self.public_ip} > inventory.ini"  # self is the special variable
     on_failure = continue
   }
 
