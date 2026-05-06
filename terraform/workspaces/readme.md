@@ -36,4 +36,59 @@ By default, it shows: default
 ```
 terraform workspace list
 ```
+## Create DEV workspace
+```
+terraform workspace new dev
+```
+## Apply DEV infrastructure
+```
+terraform init
+terraform validate
+terraform plan
+terraform apply -auto-approve
+```
+Created resources
+```
+moneyapp-dev-mongodb
+moneyapp-dev-redis
+moneyapp-allow-all-dev
+```
+Instance type :t3.micro
+
+## Create PROD workspace
+```
+terraform workspace new prod
+```
+Or if already created
+```
+terraform workspace select prod
+```
+## Apply PROD infrastructure
+```
+terraform plan
+terraform apply -auto-approve
+```
+Created resources
+```
+moneyapp-prod-mongodb
+moneyapp-prod-redis
+moneyapp-allow-all-prod
+```
+Instance type :t3.small
+
+## Switch back to DEV
+```
+terraform workspace select dev
+terraform workspace show
+```
+## Destroy DEV
+```
+terraform workspace select dev
+terraform destroy -auto-approve
+```
+## Destroy PROD
+```
+terraform workspace select prod
+terraform destroy -auto-approve
+```
 
