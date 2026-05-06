@@ -21,3 +21,19 @@ If workspace is prod, instance type will be t3.small.
 Otherwise, instance type will be t3.micro.
 
 This is how we can create environment-specific infrastructure using Terraform workspaces
+
+Note: Always run terraform workspace show before applying.
+Terraform workspace means same code, different state, different environment.
+
+## Workspace Commands ##
+Check current workspace
+```
+terraform workspace show
+```
+By default, it shows: default
+
+## List workspaces
+```
+terraform workspace list
+```
+
